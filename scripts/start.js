@@ -1,5 +1,10 @@
+// Run using node scripts/start.js
+
+// My basic Javascript course
+
+
 // Declaring variables
-var myName
+var someName
 let anotherName
 
 // Storing values
@@ -95,9 +100,95 @@ let myStr = "I am a \"double quoted\" string inside \"double quotes\"."
 let myLink = '<a href="http://www.example.com" target="_blank">Link</a>';
 
 // Escape Sequences in Strings
-let myEscape = 
+let myEscape = "FirstLine\n\t\\SecondLine\nThirdLine"
 
+// Concatenating Strings with Plus Operator
+let concatenate = "This is the start. " + "This is the end."
 
+// Concatenating Strings with the Plus Equals Operator
+let concPlus = "This is the first sentence. "
+concPlus += "This is the second sentence."
 
+// Constructing Strings with Variables
+let myName = "Keyan"
+let myStr = "My name is " + myName + " and I am doing very well, thank you!"
 
-// Run using node scripts/start.js
+// Appending Variables to Strings
+let someAdjective = "challenging but fun!"
+let myStr = "Learning to code is "
+myStr += someAdjective 
+
+// Find the Length of a String
+let lastNameLength = 0;
+const LAST_NAME = "Lovelace"
+
+lastNameLength = LAST_NAME.length // equals 8
+
+// Use Bracket Notation to Find the First Character in a String
+let firstLetterOfLastName = 0
+firstLetterOfLastName = LAST_NAME[0] // equals L
+
+// Understand String Immutability
+let myString = "Jello World"
+myStr = "Hello World"
+
+// Use Bracket Notation to Find the Nth Character in a String
+let thirdLetterOfLastName = 0
+
+thirdLetterOfLastName = LAST_NAME[2]
+
+// Use Bracket Notation to Find the Last Character in a String
+let lastLetterOfLastName = 0
+lastLetterOfLastName = LAST_NAME[LAST_NAME.length-1]
+
+// Use Bracket Notation to Find the Nth-to-Last Character in a String
+let secondToLastLetterOfLastName = LAST_NAME[LAST_NAME.length-2]
+
+// Word Blanks
+let myNoun = "dog";
+let myAdjective = "big";
+let myVerb = "ran";
+let myAdverb = "quickly";
+
+let wordBlanks = "My " + myNoun + " ran into a " + myAdjective + " pussy." 
+wordBlanks+= "The pussy " + myVerb + " ran away " + myAdverb + "."
+
+// Store Multiple Values in one Variable using JavaScript Arrays
+let customer = ["John", 0]
+
+// Nest one Array within Another Array
+let stores = [["Kvickly", 8260], ["Netto", 8000]]
+
+// Access Array Data with Indexes
+let myArray = [50, 60, 70]
+let myData = myArray[0]
+
+// Modify Array Data With Indexes
+let citiesInDenmark = ["Aarhus", "Copenhagen", "Odense"]
+citiesInDenmark[0] = "Aalborg"
+
+// Access Multi-Dimensional Arrays With Indexes
+let multiArray = 
+    [5,2,3]
+    [0,2,3]
+    [8,2,1]
+    [[7, 2, 1], 11, 12]
+
+multiArray[2][2]    // equals 3
+multiArray[3][0][2] // 1
+
+// Manipulate Arrays With push()
+let petArray = [["Max", "Dog", 2], ["Felicity", "Cat", 7]]
+petArray.push(["Squirtle", "Turtle", 1])
+
+// Manipulate Arrays With pop()
+let winnerTeams = [["Siam", 5], ["AKA", 10], ["MKB", 1]]
+let removedFromWinnerTeams = winnerTeams.pop()
+
+// Manipulate Arrays With shift()
+let simpleArray = [["Taj Mahal", 0], ["Graves", 1]]
+let removedFirstFromArray = simpleArray.shift()
+
+// Manipulate Arrays With unshift()
+let currentStorage = [["Milk", 0], ["Cheese", 1], ["Bread", 0]]
+currentStorage.unshift(["Chicken Breast", 1])
