@@ -191,4 +191,61 @@ let removedFirstFromArray = simpleArray.shift()
 
 // Manipulate Arrays With unshift()
 let currentStorage = [["Milk", 0], ["Cheese", 1], ["Bread", 0]]
-currentStorage.unshift(["Chicken Breast", 1])
+currentStorage.unshift(["Chicken Breast", 1]) 
+
+// Shopping List
+let myList = [["Cheese", 2], ["Milk", 1], ["Meat", 1], ["Bread", 1], ["Soda", 1]]
+
+// Write Reusable JavaScript with Functions
+function reusableFunction() {
+    console.log("Hi World")
+}
+reusableFunction()
+
+// Passing Values to Functions with Arguments
+function functionWithArgs(args1, args2) { // Could also be functionWithArgs(x, y)
+    console.log(args1+args2)
+}
+functionWithArgs(3, 10)
+
+// Return a Value from a Function with Return
+function timesFive(args){
+    return 5*args
+}
+let timesFive = (args) => {return 5*args} // arrow method
+
+// Local Scope and Functions
+function myLocalScope() {
+    var myVar = "Hello"
+    console.log('inside myLocalScope', myVar)
+}
+myLocalScope()      // Will display myVar
+console.log(myVar)  // ReferenceError: myVar is not defined, as it is only defined in the local scope of the specific funtion.
+
+// Global vs. Local Scope in Functions
+let outerWear = "T-Shirt"
+
+function myOutfit() {
+    let outerWear = "sweater"
+    return outerWear    // Instances with variables having same names. Local scope takes precedence over global scope. 
+}
+
+// Understanding Undefined Value returned from a Function
+let sum = 0
+
+function addFive() {
+    sum += 5 // Will add to the global variable 'sum' but the returned value is undefined.
+}
+
+// Assignment with a Returned Value
+let processed = 0
+
+function processedArg(num) {
+    return (num + 7) / 5
+}
+processed = processedArg(7) // Returns 2
+
+// Stand in Line
+funtion nextInLine(arr, item) {
+    
+}

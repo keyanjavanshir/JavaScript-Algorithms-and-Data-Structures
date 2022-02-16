@@ -1,4 +1,5 @@
-let citiesInDenmark = ["Aarhus", "Copenhagen", "Odense"]
-citiesInDenmark[0] = "Aalborg"
+funtion nextInLine(arr, item) {
+    addToEnd = nextInLine.push(2)
 
-console.log(citiesInDenmark)
+    return item
+}
