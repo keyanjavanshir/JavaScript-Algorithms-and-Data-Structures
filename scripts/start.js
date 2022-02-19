@@ -559,3 +559,312 @@ const testObj = {
 
 let entreeValue = testObj['an entree']
 let drinkValue = testObj['the drink']
+
+// Accessing Object Properties with Variables
+const testObj = {
+    12: "Namath",
+    16: "Montana",
+    19: "Unitas"
+}
+
+const playerNumber = 16
+const player = testObj[playerNumber]
+
+// Updating Object Properties
+myDog.name = "Something Else" // Access object variable and change it
+
+// Add New Properties to a JavaScript Object
+myDog.bark = "woof"
+
+// Delete Properties from a JavaScript Object
+delete myDog.bark
+
+// Using Objects for Lookups
+function phoneticLookup(val) {
+    let result = "";
+
+    const lookup = {
+        "alpha": "Adams",
+        "bravo": "Boston",
+        "charlie": "Chicago",
+        "delta": "Denver",
+        "echo": "Easy",
+        "foxtrot": "Frank",
+    }
+
+    result = lookup[val]
+
+    return result;
+  }
+
+// Testing Objects for Properties
+function checkObj(obj, checkProp) {
+
+if(obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp]
+} 
+
+    return "Not Found";
+ }
+
+// Accessing Nested Objects
+const myStorage = {
+    "car": {
+      "inside": {
+        "glove box": "maps",
+        "passenger seat": "crumbs"
+       },
+      "outside": {
+        "trunk": "jack"
+      }
+    }
+  }
+  
+  const gloveBoxContents = myStorage.car.inside["glove box"]
+
+// Accessing Nested Arrays
+const myPlants = [
+    {
+      type: "flowers",
+      list: [
+        "rose",
+        "tulip",
+        "dandelion"
+      ]
+    },
+    {
+      type: "trees",
+      list: [
+        "fir",
+        "pine", // I want to find this.
+        "birch"
+      ]
+    }
+  ];
+  
+  const secondTree = myPlants[1].list[1]
+
+  //Record Collection
+  const recordCollection = {
+    2548: {
+      albumTitle: 'Slippery When Wet',
+      artist: 'Bon Jovi',
+      tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    },
+    2468: {
+      albumTitle: '1999',
+      artist: 'Prince',
+      tracks: ['1999', 'Little Red Corvette']
+    },
+    1245: {
+      artist: 'Robert Palmer',
+      tracks: []
+    },
+    5439: {
+      albumTitle: 'ABBA Gold'
+    }
+  };
+
+  function updateRecords(records, id, prop, value){
+
+    if(prop !== "tracks" && value !== ""){
+        records[id][prop] = value
+    } else if(prop === "tracks" && records[id].hasOwnProperty("tracks") === false){
+        records[id][prop] = [value]
+    } else if(prop === "tracks" && value !== ""){
+        records[id][prop].push(value)
+    } else if(value === ""){
+        delete records[id][prop]
+    }
+
+    return records
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// Iterate with JavaScript While Loops
+const myArray = []
+
+let i = 5
+let minusOne = (-1)
+
+while(i > (variable)){
+    myArray.push(i)
+    i--
+}
+
+// Iterate with JavaScript For Loops
+const myArray = [];
+
+for (let i = 1; i < 6; i++) {
+  myArray.push(i)
+}
+
+// Iterate Through an Array with a For Loop
+const myArray = [2, 3, 4, 5, 6]
+let total = 0
+
+for(let i = 0; i < myArray.length; i++){
+    total += myArray[i]
+}
+
+// Nesting For Loops
+function multiplyAll(arr){
+    let product = 1
+  
+    for(let i = 0; i < arr.length; i++){
+      for(let j = 0; j < arr[i].length; j++){ // Targetting index of array. I did arr.length[i] which targets the length, not the sub-array which is found in the index.
+        product *= arr[i][j]
+      }
+    }
+  
+    console.log(product)
+    return product
+  }
+  
+  multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+ // Iterate with JavaScript Do...While Loops
+ const myArray = []
+ let i = 10
+
+ do{
+     myArray.push(i)
+     i++
+ } while (i < 10) 
+
+// Replace Loops using Recursion
+ function sum(arr, n){
+    if(n <= 0 ) {
+      return 0
+    } else {
+      return sum(arr, n-1) + arr[n-1]
+    }
+  }
+
+// Profile Lookup
+const contacts = [
+    {
+      firstName: "Akira",
+      lastName: "Laine",
+      number: "0543236543",
+      likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+      firstName: "Harry",
+      lastName: "Potter",
+      number: "0994372684",
+      likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+      firstName: "Sherlock",
+      lastName: "Holmes",
+      number: "0487345643",
+      likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+      firstName: "Kristian",
+      lastName: "Vos",
+      number: "unknown",
+      likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+  ];
+  
+  // The function should check if name is an actual contact's firstName and the given property (prop) is a property of that contact.
+  
+  // If both are true, then return the "value" of that property.
+  
+  // If name does not correspond to any contacts then return the string No such contact.
+  
+  // If prop does not correspond to any valid properties of a contact found to match name then return the string No such property.
+  
+  
+  function lookUpProfile(name, prop) {
+    // Only change code below this line
+  
+    for(let i = 0; i < contacts.length; i++){
+      if(contacts[i].firstName === name){
+        if(contacts[i].hasOwnProperty(prop)){
+          return contacts[i][prop]
+        } else {
+          return "No such property"
+        }
+      }
+    }
+  
+    return "No such contact"
+    
+    // Only change code above this line
+  }
+  
+  lookUpProfile("Akira", "likes");
+
+// Generate Random Fractions with JavaScript
+function randomFraction(){
+
+    let randomNumber = Math.random()
+
+    return randomNumber
+}
+
+// Generate Random Whole Numbers with JavaScript 
+function randomWholeNumber() {
+    return Math.floor(Math.random() * 10)
+}
+
+// Generate Random Whole Numbers within a Range
+function randomRange(myMin, myMax){
+
+    return Math.floor(Math.random() * (myMax - myMin + 1) + myMin)
+}
+
+// Use the parseInt Function
+function convertToInteger(str) {
+    let result = parseInt(str)
+
+    return result
+}
+
+// Use the parseInt Function with a Radix
+function convertToInteger(str) {
+    let result = parseInt(str, 2)
+  
+    return result
+  }
+
+// Use the Conditional (Ternary) Operator
+function checkEqual(a, b) {
+    return a === b ? "Equal" : "Not Equal"
+}
+
+// Use Multiple Conditional (Ternary) Operators
+function checkSign(num) {
+    return (num > 0) ? "positive"
+        : (num < 0) ? "negative"
+        : "zero"
+}
+
+// Use Recursion to Create a Countdown
+function countdown(n) {
+    if(n < 1) {
+      return []
+    } else {
+      let array = countdown(n-1)
+      array.unshift(n)
+      return array
+    }
+}
+
+// Use Recursion to Create a Range of Numbers
+function rangeOfNumbers(startNum, endNum) {
+  
+    if(endNum - startNum === 0){
+      return [startNum]
+    } else {
+      let numberArray = rangeOfNumbers(startNum, endNum-1)
+      numberArray.push(endNum)
+      return numberArray
+    }
+  }
+
+// 
