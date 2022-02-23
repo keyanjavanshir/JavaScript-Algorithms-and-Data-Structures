@@ -70,3 +70,84 @@ const HIGH_TEMPERATURES {
 }
 
 const {today, tomorrow} = HIGH_TEMPERATURES
+
+// Use Destructuring Assignment to Assign Variables from Objects
+const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES
+
+// Use Destructuring Assignment to Assign Variables from Nested Objects
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+
+const lowToday = LOCAL_FORECAST.today.low;
+const highToday = LOCAL_FORECAST.today.high;
+
+// Becomes ->
+
+const {today: { low: lowToday, high: highToday} } = LOCAL_FORECAST
+
+// Use Destructuring Assignment to Assign Variables from Arrays
+let a = 8, b = 6;
+
+[a, b] = [b, a]
+
+// Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+const source = [1,2,3,4,5,6,7,8,9,10];
+
+function removeFirstTwo(list) {
+
+  let [a, b, ...arr] = list
+
+  return arr;
+}
+
+const arr = removeFirstTwo(source);
+
+// Use Destructuring Assignment to Pass an Object as a Function's Parameters
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+const half = ({min, max}) => (max + min) / 2.0
+
+// Create Strings using Template Literals
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+
+function makeList(arr) {
+  let failuresList = []
+
+  for(let i = 0; i < arr.length; i++){
+    failuresList.push(`<li class="text-warning">${arr[i]}</li>`)
+  }
+
+  return failuresList
+}
+
+const failuresList = makeList(result.failure);
+
+// Write Concise Object Literal Declarations Using Object Property Shorthand
+const createPerson = (name, age, gender) => {
+  // Only change code below this line
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+  // Only change code above this line
+};
+
+const createPerson = (name, age, gender) => (
+  {name, age, gender}
+)
