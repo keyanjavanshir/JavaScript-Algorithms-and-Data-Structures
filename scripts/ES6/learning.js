@@ -63,7 +63,7 @@ const sum = (...args) =>  {
 }
 
 // Use Destructuring Assignment to Extract Values from Objects
-const HIGH_TEMPERATURES {
+const HIGH_TEMPERATURES = {
   yesterday: 75,
   today: 77,
   tomorrow: 80
@@ -139,15 +139,50 @@ const failuresList = makeList(result.failure);
 
 // Write Concise Object Literal Declarations Using Object Property Shorthand
 const createPerson = (name, age, gender) => {
-  // Only change code below this line
   return {
     name: name,
     age: age,
     gender: gender
   };
-  // Only change code above this line
 };
 
 const createPerson = (name, age, gender) => (
   {name, age, gender}
 )
+
+// Write Concise Declarative Functions with ES6
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear
+  }
+}
+
+console.log(bicycle.gear)
+
+//  Use class Syntax to Define a Constructor Function
+class FutureCity {
+  constructor(cityName) {
+    this.city = cityName
+  }
+}
+
+// Use getters and setters to Control Access to an Object
+class Thermostat {
+  constructor(fahrenheit){
+    this.fahrenheit = fahrenheit
+  }
+
+  // getter
+  get temperature(){
+    return (5/9) * (this.fahrenheit - 32)
+  }
+
+  // setter
+  set temperature(celsius){
+    this.fahrenheit = (celsius * 9.0) / 5 + 32
+    
+  }
+}
+
+// 
