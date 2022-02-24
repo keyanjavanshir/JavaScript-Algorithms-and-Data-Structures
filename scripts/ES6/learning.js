@@ -63,7 +63,7 @@ const sum = (...args) =>  {
 }
 
 // Use Destructuring Assignment to Extract Values from Objects
-const HIGH_TEMPERATURES = {
+const HIGH_TEMPERATURES {
   yesterday: 75,
   today: 77,
   tomorrow: 80
@@ -139,50 +139,81 @@ const failuresList = makeList(result.failure);
 
 // Write Concise Object Literal Declarations Using Object Property Shorthand
 const createPerson = (name, age, gender) => {
+  // Only change code below this line
   return {
     name: name,
     age: age,
     gender: gender
   };
+  // Only change code above this line
 };
 
 const createPerson = (name, age, gender) => (
   {name, age, gender}
 )
 
-// Write Concise Declarative Functions with ES6
-const bicycle = {
-  gear: 2,
-  setGear(newGear) {
-    this.gear = newGear
-  }
+// Use export to Share a Code Block
+const uppercaseString = (string) => {
+  return string.toUpperCase();
 }
 
-console.log(bicycle.gear)
-
-//  Use class Syntax to Define a Constructor Function
-class FutureCity {
-  constructor(cityName) {
-    this.city = cityName
-  }
+const lowercaseString = (string) => {
+  return string.toLowerCase()
 }
 
-// Use getters and setters to Control Access to an Object
-class Thermostat {
-  constructor(fahrenheit){
-    this.fahrenheit = fahrenheit
-  }
+export{uppercaseString, lowercaseString}
 
-  // getter
-  get temperature(){
-    return (5/9) * (this.fahrenheit - 32)
-  }
+// Reuse JavaScript Code Using import
+import {uppercaseString, lowercaseString} from './string_functions.js'
 
-  // setter
-  set temperature(celsius){
-    this.fahrenheit = (celsius * 9.0) / 5 + 32
-    
-  }
+uppercaseString("hello");
+lowercaseString("WORLD!");
+
+// Use * to Import Everything from a File
+import * as stringFunctions from './string_functions.js'
+
+// Create an Export Fallback with export default
+export default function subtract(x, y) {
+  return x - y;
 }
 
-// 
+// Import a Default Export
+import subtract from './math_functions.js'
+
+// Create a JavaScript Promise
+const makeServerRequest = new Promise((resolve, reject) => {
+
+})
+
+// Complete a Promise with resolve and reject
+const makeServerRequest = new Promise((resolve, reject) => {
+    let responseFromServer
+
+    if(responseFromServer){
+      resolve("We got the data")
+    } else {
+      reject("Data not received")
+    }
+
+    return responseFromServer
+})
+
+// Handle a Fulfilled Promise with then
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer = true
+
+  if(responseFromServer){
+    resolve("We got the data")
+  } else {
+    reject("Data not received")
+  }
+})
+
+makeServerRequest.then(result => {
+  console.log(result)
+})
+
+// Handle a Rejected Promise with catch
+makeServerRequest.catch(error => {
+  console.log(error)
+})
